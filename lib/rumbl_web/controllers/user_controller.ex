@@ -55,7 +55,7 @@ defmodule RumblWeb.UserController do
 
   def delete(conn, %{"id" => id}) do
     user = Accounts.get_user!(id)
-    {:ok, _user} = Account.delete_user(user)
+    {:ok, _user} = Accounts.delete_user(user)
 
     conn
     |> put_flash(:info, "User deleted successfully.")
